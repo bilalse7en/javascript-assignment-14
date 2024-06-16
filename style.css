@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.dropdowns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 0px!important;
+    width: 500px;
+}
+
+.card h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 210px;
+    max-height: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.card ul li {
+    margin-bottom: 5px;
+}
+
+.car-img {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    background: linear-gradient(270deg, #ffffff80, #00000080);
+    background-size: 400% 400%;
+
+    -webkit-animation: car-bg-animation 30s ease infinite;
+    -moz-animation: car-bg-animation 30s ease infinite;
+    -o-animation: car-bg-animation 30s ease infinite;
+    animation: car-bg-animation 30s ease infinite;
+}
+
+@keyframes car-bg-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.car-colors {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
