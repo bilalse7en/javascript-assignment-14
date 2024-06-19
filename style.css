@@ -41,7 +41,6 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 0px!important;
-    width: 500px;
 }
 
 .card h2 {
@@ -53,11 +52,15 @@ main {
     display: block;
     margin: 0 auto;
     max-width: 100%;
-    height: 210px;
     max-height: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.card img:hover {
+    transform: scale(1.5);
+    transition: 0.8s;
 }
 
 .card p {
@@ -82,10 +85,10 @@ main {
     background: linear-gradient(270deg, #ffffff80, #00000080);
     background-size: 400% 400%;
 
-    -webkit-animation: car-bg-animation 30s ease infinite;
-    -moz-animation: car-bg-animation 30s ease infinite;
-    -o-animation: car-bg-animation 30s ease infinite;
-    animation: car-bg-animation 30s ease infinite;
+    -webkit-animation: car-bg-animation 10s ease infinite;
+    -moz-animation: car-bg-animation 10s ease infinite;
+    -o-animation: car-bg-animation 10s ease infinite;
+    animation: car-bg-animation 10s ease infinite;
 }
 
 @keyframes car-bg-animation {
@@ -100,4 +103,18 @@ main {
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.car-card {
+    height: auto;
+}
+
+.car-card img:hover {
+    transform: scale(1.2);
+    transition: 0.8s;
 }
