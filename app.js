@@ -565,18 +565,22 @@ function showCarDetails() {
         if (car) {
             var carDetailsHTML = `
                 <div class="main-car align-self-end bg-opacity-75  p-3 rounded-4 text-bg-dark">
-                    <div class="text-center">
-                        <img id="carImage" src="${car.images[car.color[0]]}" alt="${selectedModel}">
-                    </div>
-                    <div class="card-body">
-                        <h2>${selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1)}</h2>
-                        <p><strong>Manufacturer:</strong> ${selectedManufacturer.charAt(0).toUpperCase() + selectedManufacturer.slice(1)}</p>
-                        <p><strong>Model Year:</strong> ${car.model}</p>
-                        <p><strong>Mileage:</strong> ${car.mileage}</p>
-                        <p><strong>Available:</strong> ${car.available ? 'Yes' : 'No'}</p>
-                        <p><strong>Doors:</strong> ${car.doors}</p>
-                        <p><strong>Select your Color:</strong></p>
-                        <div class="d-flex justify-content-evenly opacity-100 py-3 rounded text-bg-dark">
+                    <div class="row">
+                        <div class="col-md-10 text-center">
+                            <div class="text-center">
+                                <img id="carImage" src="${car.images[car.color[0]]}" alt="${selectedModel}">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-body">
+                                <h2>${selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1)}</h2>
+                                <p><strong>Manufacturer:</strong> ${selectedManufacturer.charAt(0).toUpperCase() + selectedManufacturer.slice(1)}</p>
+                                <p><strong>Model Year:</strong> ${car.model}</p>
+                                <p><strong>Mileage:</strong> ${car.mileage}</p>
+                                <p><strong>Available:</strong> ${car.available ? 'Yes' : 'No'}</p>
+                                <p><strong>Doors:</strong> ${car.doors}</p>
+                                <p><strong>Select your Color:</strong></p>
+                                <div class="d-flex justify-content-evenly opacity-100 py-3 rounded text-bg-dark">
                     `;
                     
                     car.color.forEach(color => {
@@ -588,6 +592,8 @@ function showCarDetails() {
                     carDetailsHTML += `
                             </div>
                         </div>
+                    </div>
+                    </div>
                     </div>
                     `;
             carDetailsContainer.innerHTML = carDetailsHTML;
