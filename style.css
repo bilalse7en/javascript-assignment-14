@@ -1,5 +1,18 @@
+@font-face {
+    font-family: 'prosto';
+    src: url('./font/Prosto_One/ProstoOne-Regular.ttf') format('truetype'); /* Adjust path relative to the CSS file */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'm-plus';
+    src: url('./font/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf') format('truetype'); /* Adjust path relative to the CSS file */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'm-plus', Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -14,12 +27,21 @@ header {
 
 h1 {
     margin: 0;
+    font-family: 'prosto';
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'prosto';
 }
 
 .dropdowns {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+p {
+    margin: 10px 0px;
 }
 
 select {
@@ -35,53 +57,14 @@ main {
     margin-top: 20px;
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 0px!important;
-}
-
-.card h2 {
-    margin-top: 0;
-    text-align: center;
-}
-
-.card img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.card img:hover {
+.main-car img:hover {
     transform: scale(1.5);
     transition: 0.8s;
 }
 
-.card p {
-    margin: 10px 0;
-}
-
-.card ul {
-    padding: 0;
-    margin: 10px 0;
-    list-style-type: none;
-    text-align: center;
-}
-
-.card ul li {
-    margin-bottom: 5px;
-}
-
-.car-img {
+.main-car {
     max-width: 100%;
     height: auto;
-    text-align: center;
     background: linear-gradient(270deg, #ffffff80, #00000080);
     background-size: 400% 400%;
 

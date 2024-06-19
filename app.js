@@ -564,8 +564,8 @@ function showCarDetails() {
         var car = cars[selectedManufacturer][selectedModel];
         if (car) {
             var carDetailsHTML = `
-                <div class="card">
-                    <div class="car-img">
+                <div class="main-car align-self-end bg-opacity-75  p-3 rounded-4 text-bg-dark">
+                    <div class="text-center">
                         <img id="carImage" src="${car.images[car.color[0]]}" alt="${selectedModel}">
                     </div>
                     <div class="card-body">
@@ -626,17 +626,17 @@ function displayAllCars() {
         manufacturerSection.appendChild(manufacturerHeading);
 
         var rowDiv = document.createElement('div');
-        rowDiv.className = 'flex-wrap gap-3 m-0 row w-100';
+        rowDiv.className = 'm-0 row w-100';
 
         var manufacturerCars = cars[manufacturer];
         for (var model in manufacturerCars) {
             var car = manufacturerCars[model];
 
             var colDiv = document.createElement('div');
-            colDiv.className = 'align-self-end bg-opacity-75 col-md p-3 rounded-4 text-bg-dark';
+            colDiv.className = 'p-2 col-md-3';
 
             var carCard = document.createElement('div');
-            carCard.className = 'car-card';
+            carCard.className = 'car-card align-self-end bg-opacity-75  p-3 rounded-4 text-bg-dark';
 
             var carImage = document.createElement('img');
             carImage.src = car.images[car.color[0]];
@@ -647,7 +647,9 @@ function displayAllCars() {
             carDetails.className = 'car-details';
 
             carDetails.innerHTML = `
-                <h3>${model.charAt(0).toUpperCase() + model.slice(1)}</h3>
+            <h3 class="text-center">${model.charAt(0).toUpperCase() + model.slice(1)}</h3>
+            <div class="card-body d-none"> <!-- Initially hide the card-body -->
+                
                 <p><strong>Model Year:</strong> ${car.model}</p>
                 <p><strong>Mileage:</strong> ${car.mileage}</p>
                 <p><strong>Available:</strong> ${car.available ? 'Yes' : 'No'}</p>
@@ -658,7 +660,6 @@ function displayAllCars() {
             var colorOptions = document.createElement('div');
             colorOptions.className = 'd-flex justify-content-evenly opacity-100 py-3 rounded text-bg-dark';
 
-            // Use a closure to maintain the correct context
             car.color.forEach(function(color) {
                 var colorDiv = document.createElement('div');
                 colorDiv.className = 'car-colors';
@@ -676,10 +677,27 @@ function displayAllCars() {
             carCard.appendChild(carDetails);
             colDiv.appendChild(carCard);
             rowDiv.appendChild(colDiv);
-        }
 
+            // Add event listeners for mouseover and mouseout
+            carCard.addEventListener('mouseover', function() {
+                // Show card-body when mouse over
+                var cardBody = this.querySelector('.card-body');
+                if (cardBody) {
+                    cardBody.classList.remove('d-none');
+                }
+            });
+
+            carCard.addEventListener('mouseout', function() {
+                // Hide card-body when mouse out
+                var cardBody = this.querySelector('.card-body');
+                if (cardBody) {
+                    cardBody.classList.add('d-none');
+                }
+            });
+        }
         manufacturerSection.appendChild(rowDiv);
         allCarsContainer.appendChild(manufacturerSection);
+        carDetails.innerHTML += `</div>`
     }
 }
 
